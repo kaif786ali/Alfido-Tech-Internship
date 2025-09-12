@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthCare - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e6f0ff, #f4f9ff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,123,255,0.2);
+    }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      background:#007bff;
+      color:white;
+      border-radius:0 0 15px 15px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">HealthCare</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="bg-light text-center py-5">
+  <div class="container">
+    <h1 class="display-5 fw-bold">Your Health, Our Priority</h1>
+    <p class="lead">Find trusted doctors for common health issues</p>
+  </div>
+</header>
+
+<!-- Health Issues Section -->
+<section class="container py-5">
+  <h2 class="mb-4 text-center">Common Health Issues & Recommended Doctors</h2>
+  <div class="row g-4">
+
+    <!-- Doctor 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Cold & Flu</h5>
+          <p>Symptoms: cough, sore throat, runny nose, fever.</p>
+          <h6>Doctor:</h6>
+          <p> – General Physician</p>
+          <a href="https://www.bing.com/maps?q=general+physician+near+me&qs=LS&pq=+general+physician&sc=12-18&cvid=277934DA08414ED19A2A99FED2569C77&FORM=QBRE&sp=1&ghc=1&lq=0" class="btn btn-primary btn-sm">Contact Doctor</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Back Pain</h5>
+          <p>Causes: muscle strain, poor posture, or injury.</p>
+          <h6>Doctor:</h6>
+          <p>– Orthopedic Specialist</p>
+          <a href="https://www.google.com/maps/search/orthopedic+specialist+near+me/@28.5627378,77.3546505,14z?entry=s&sa=X&ved=1t%3A199789" class="btn btn-primary btn-sm">Contact Doctor</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Diabetes</h5>
+          <p>Symptoms: excessive thirst, frequent urination, fatigue.</p>
+          <h6>Doctor:</h6>
+          <p>– Endocrinologist</p>
+          <a href="https://www.google.com/maps/search/Endocrinologist+near+me/@28.5627347,77.3546505,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-primary btn-sm">Contact Doctor</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 4 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Skin Allergies</h5>
+          <p>Symptoms: rashes, itching, redness.</p>
+          <h6>Doctor:</h6>
+          <p> – Dermatologist</p>
+          <a href="https://www.google.com/maps/search/Dermatologist+near+me/@28.5627316,77.3546505,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-primary btn-sm">Contact Doctor</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 5 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Heart Issues</h5>
+          <p>Symptoms: chest pain, shortness of breath, fatigue.</p>
+          <h6>Doctor:</h6>
+          <p>– Cardiologist</p>
+          <a href="https://www.google.com/maps/search/Cardiologist+near+me/@28.5627285,77.3546505,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-primary btn-sm">Contact Doctor</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 6 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Eye Care</h5>
+          <p>Issues: blurred vision, eye strain, redness.</p>
+          <h6>Doctor:</h6>
+          <p> – Ophthalmologist</p>
+          <a href="https://www.google.com/maps/search/Ophthalmologist+near+me/@28.5627254,77.3546504,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-primary btn-sm">Contact Doctor</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 HealthCare. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
