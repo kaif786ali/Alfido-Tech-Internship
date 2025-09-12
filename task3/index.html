@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Simple Webpage</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #2980b9;
+      --accent-color: #e67e22;
+      --background-color: #f4f7f8;
+      --text-color: #34495e;
+      --heading-color: #2c3e50;
+      --footer-bg: #2c3e50;
+      --footer-text: #ecf0f1;
+      --icon-hover-color: #e67e22;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #dfe6e9;
+    }
+    /* Task 3 Button Styles */
+    #colorButton {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--accent-color);
+      color: white;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    #colorButton:hover {
+      background-color: #d35400;
+      transform: scale(1.05);
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .bio {
+      padding: 2rem;
+    }
+    .profile-image-container {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 2rem;
+    }
+    .bio img#profileImage {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border: 4px solid var(--secondary-color);
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .bio img#profileImage:hover {
+      transform: scale(1.05);
+    }
+    .edit-icon {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: rgba(44, 62, 80, 0.8);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: 2px solid white;
+    }
+    .edit-icon:hover {
+      background-color: var(--accent-color);
+    }
+    .edit-icon svg {
+      fill: white;
+      width: 20px;
+      height: 20px;
+    }
+    .image-selector {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .image-selector input[type="file"] {
+      display: none;
+    }
+    .image-selector label {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      user-select: none;
+    }
+    .image-selector label:hover {
+      background-color: var(--accent-color);
+    }
+    .image-selector label svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+    .bio h2 {
+      color: var(--heading-color);
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    .bio p {
+      margin-bottom: 1.25rem;
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+    .bio strong {
+      color: var(--secondary-color);
+    }
+    .bio em {
+      color: var(--accent-color);
+      font-style: normal;
+      font-weight: 600;
+    }
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 1.5rem 1rem 2.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      user-select: none;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: var(--footer-text);
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: var(--icon-hover-color);
+    }
+    .social-icons svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .bio h2 {
+        font-size: 1.5rem;
+      }
+      .bio p {
+        font-size: 1rem;
+      }
+      .profile-image-container {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 1.5rem;
+      }
+      .bio img#profileImage {
+        width: 140px;
+        height: 140px;
+      }
+      .edit-icon {
+        width: 28px;
+        height: 28px;
+        border-width: 1.5px;
+      }
+      .edit-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+      .image-selector label {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+      .image-selector label svg {
+        width: 16px;
+        height: 16px;
+      }
+      .social-icons {
+        gap: 1rem;
+      }
+      .social-icons a {
+        width: 28px;
+        height: 28px;
+      }
+      .social-icons svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mohammad Kaif Ali</h1>
+    <p>Aspiring Engineer | Passionate about Technology &amp; Problem-Solving</p>
+    <!-- Task 3 Button -->
+    <button id="colorButton">Change Background Color</button>
+  </header>
+
+  <main>
+    <section class="bio">
+      <div class="image-selector" id="imageSelector">
+        <label for="imageUpload" title="Select Profile Image">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4v-6h3l-5-5z"/>
+          </svg>
+          Select Profile Image
+        </label>
+        <input type="file" id="imageUpload" accept="image/*" />
+      </div>
+
+      <div class="profile-image-container">
+        <img id="profileImage" src="images/profile.jpg" alt="Profile picture of Mohammad Kaif Ali" />
+        <div class="edit-icon" id="editIcon" title="Edit Profile Image" style="display:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"/>
+          </svg>
+        </div>
+      </div>
+
+      <h2>About Me</h2>
+      <p>
+        I’m <strong>Mohammad Kaif Ali</strong>, an aspiring engineer who is passionate about 
+        technology, problem-solving, and ongoing learning.
+      </p>
+
+      <h2>My Journey</h2>
+      <p>
+        My journey started in <strong>Munger, Bihar</strong>. It has brought me to the 
+        <strong>University Institute of Technology</strong>, where I am working toward my 
+        Bachelor of Engineering. Along the way, I’ve sought opportunities to grow beyond 
+        academics.
+      </p>
+      <p>
+        I completed a <strong>Deloitte virtual internship</strong> that introduced me to 
+        real-world problem-solving and corporate workflows. I am also doing an 
+        <strong>Advanced Python internship with Codec</strong>, where I’m deepening my 
+        knowledge in programming, automation, and software development.
+      </p>
+
+      <h2>Interests</h2>
+      <p>
+        When I’m not focused on my studies or projects, I enjoy exploring new technologies, 
+        learning about industry trends, and improving my skills through hands-on experience. 
+        I believe growth comes from curiosity and persistence. I aim to use that mindset to 
+        create solutions that have a meaningful impact.
+      </p>
+
+      <h2>Philosophy</h2>
+      <p>
+        My philosophy is straightforward: <em>knowledge becomes powerful when applied to 
+        create something valuable.</em> With every step, I strive to connect learning and 
+        innovation, building a career based on technical skill and meaningful contributions.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mohammad Kaif Ali | My Simple Webpage</p>
+    <div class="social-icons" aria-label="Social media links">
+      <a href="https://instagram.com/your_instagram_id" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+        </svg>
+      </a>
+      <a href="https://facebook.com/your_facebook_id" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+          <path d="M22 12a10 10 0 10-11.5 9.87v-6.99h-2.2v-2.88h2.2v-2.2c0-2.18 1.3-3.39 3.3-3.39.96 0 1.96.17 1.96.17v2.15h-1.1c-1.08 0-1.42.67-1.42 1.36v1.9h2.42l-.39 2.88h-2.03v6.99A10 10 0 0022 12z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/your_linkedin_id" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+          <path d="M4.98 3.5a2.5 2.5 0 11-.001 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.6v1.71h.05a3.95 3.95 0 013.55-1.95c3.8 0 4.5 2.5 4.5 5.75V21H16v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Image Upload Functionality
+    const imageUpload = document.getElementById('imageUpload');
+    const profileImage = document.getElementById('profileImage');
+    const imageSelector = document.getElementById('imageSelector');
+    const editIcon = document.getElementById('editIcon');
+
+    imageUpload.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          profileImage.src = e.target.result;
+          imageSelector.style.display = 'none';
+          editIcon.style.display = 'flex';
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    editIcon.addEventListener('click', () => {
+      imageUpload.click();
+      imageSelector.style.display = 'inline-block';
+      editIcon.style.display = 'none';
+    });
+
+    // Task 3: Random Background Color Button
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    const colorButton = document.getElementById('colorButton');
+    colorButton.addEventListener('click', () => {
+      document.body.style.backgroundColor = getRandomColor();
+    });
+  </script>
+
+</body>
+</html>
